@@ -3,9 +3,16 @@ const mongoose = require("mongoose");
 const Author = mongoose.model(
   "Author",
   new mongoose.Schema({
-    name: String,
-    bio: String,
-    website: String,
+    name: {
+      type: String,
+      require: true,
+    },
+    bio: { type: String },
+    website: { type: String },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
   })
 );
 

@@ -23,23 +23,23 @@ async function createAuthor(name, bio, website) {
 // createAuthor("Kopustas", "Darzas", "darzas.com");
 // createAuthor("movie", "facebook", "facebook.com");
 
-async function createCourse(name, author) {
+async function createCourse(name, author, description) {
   const course = new Course({
     name,
-    author
+    author,
+    description
   });
 
   const result = await course.save();
   console.log(result);
 }
 
-// createCourse("html","64ce794a7d66ae6ccbd98e37");
-// createCourse("CSS","64ce794a7d66ae6ccbd98e38");
-// createCourse("Javascript","64ce794a7d66ae6ccbd98e37");
-// createCourse("REACT","64ce794a7d66ae6ccbd98e38");
-// createCourse("Angular","64ce794a7d66ae6ccbd98e3a");
-// createCourse("REACT","64ce794a7d66ae6ccbd98e39");
-
+// createCourse("html","64ce9e0a8b3d55155093366d", "easy as 1");
+// createCourse("CSS","64ce9e0a8b3d55155093366e", "very pretty");
+// createCourse("Javascript","64ce9e0a8b3d55155093366f", "hardest of 3");
+// createCourse("REACT","64ce9e0a8b3d551550933670", "Evil stuff");
+// createCourse("Angular","64ce9e0a8b3d55155093366e", "Dont know anything");
+// createCourse("Typescript","64ce9e0a8b3d55155093366d", "Have cool name");
 
 async function listCourses() {
   const courses = await Course.find().populate("author").select("name");
