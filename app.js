@@ -27,7 +27,7 @@ async function createCourse(name, author, description) {
   const course = new Course({
     name,
     author,
-    description
+    description,
   });
 
   const result = await course.save();
@@ -46,4 +46,4 @@ async function listCourses() {
   console.log(courses);
 }
 
-listCourses();
+// listCourses();
